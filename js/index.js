@@ -132,12 +132,15 @@ $(document).ready(function() {
       itemIdx--; // 인덱스 감소
       $(".g_page span:nth-child(1)").text(itemIdx + 1); // 페이지 번호 업데이트
       $(modalSelector + " .modal-content>li").eq(itemIdx).fadeIn(); // 새로운 아이템 표시
+      $(modalSelector).scrollTop(0);
     }
+    
   });
 
   // 다음 버튼 클릭 시 (모든 모달 공통 처리)
   $(".next").click(function() {
     const modalSelector = $('.tab_link.active').data('tab') === 'tab1' ? '.modal1' : '.modal2';
+    $(modalSelector).scrollTop(0);
     
     if ($('.tab_link.active').data('tab') === 'tab1' && itemIdx < 6) {
       $(modalSelector + " .modal-content>li").eq(itemIdx).fadeOut(); // 현재 표시된 아이템 숨기기
@@ -209,6 +212,7 @@ $(document).ready(function() {
     $(".modal-btn1").css("display", "none");
     $(".modal-btn2").css("display", "none");
   }
+
 
 
   /* Web Publishing */
