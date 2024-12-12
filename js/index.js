@@ -1,45 +1,89 @@
 $(document).ready(function() {
-  // FullPage 설정
-  $('#fullpage').fullpage({
-    anchors: ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'],
-    navigation: true,
-    navigationPosition: 'right',
-    scrollOverflow: true,
+  /* 탑버튼&오른쪽 퀵메뉴*/
+  $(".top_btn").hide();  //탑버튼 숨기기
 
-    afterLoad: function(anchorLink, index) {
-      if (index >= 4) {
-        $('header').fadeIn(300);  // 섹션 4 이상에서는 헤더 보이게
-      } else {
-        $('header').fadeOut(300);  // 섹션 1~3에서는 헤더 숨기기
+  $(window).scroll(function(){
+    //스크롤위치 표시
+    let scrPosition = $(this).scrollTop();
+    $("#txt1").text(scrPosition);
+
+    //스크롤이 300이상일때  TOP버튼,오른쪽 퀵메뉴 보이게 하고 스크롤을 올리면 다시 숨김
+    if(scrPosition>=1100){
+      $(".top_btn").fadeIn(); 
+    }else{
+      $(".top_btn").fadeOut(); 
+    };
+  });
+
+  /* header */
+  $(document).ready(function() {
+  // 메뉴 클릭 시 섹션으로 이동
+  $("header ul li a").click(function(event) {
+    event.preventDefault(); // 기본 클릭 동작 방지
+    let targetSection = $($(this).attr("href")); // href 값으로 타겟 섹션 찾기
+    $('html, body').animate({
+      scrollTop: targetSection.offset().top // 타겟 섹션으로 스크롤 이동
+    }, 100);
+  });
+
+  // 스크롤 위치에 따라 메뉴 항목 활성화
+  $(window).scroll(function() {
+    console.log("Scroll event triggered");
+    let scroll = $(this).scrollTop(); // 현재 스크롤 위치
+    let sections = $("div[id^='section']"); // section1, section2, section3 등으로 시작하는 div 선택
+
+    console.log("Total sections:", sections.length); // 섹션의 개수 확인
+
+    let activeIndex = -1; // 활성화할 메뉴 항목의 인덱스 선언
+
+    sections.each(function(index, section) {
+      let sectionTop = $(section).offset().top; // 섹션의 상단 위치
+      let sectionBottom = sectionTop + $(section).outerHeight(); // 섹션의 하단 위치
+      console.log("Section", index, "Top:", sectionTop, "Bottom:", sectionBottom, "Scroll:", scroll);
+
+      // `#section4`부터 활성화하려면 `section4`가 보일 때부터 활성화
+      if (scroll >= sectionTop - 100 && scroll < sectionBottom - 100 && index >= 3) {
+        activeIndex = index - 3; // `#section4`는 첫 번째 메뉴 항목으로 활성화되도록 조정
       }
+    });
 
-      $('header ul li a').removeClass('active');
+    // active 클래스 추가
+    $("header ul li a").removeClass("active");
+    if (activeIndex !== -1) {
+      $("header ul li a").eq(activeIndex).addClass("active");
+    }
 
-      if (index >= 4) {
-        var sectionId = 'section' + index;
-        $('header ul li[data-menuanchor="'+sectionId+'"] a').addClass('active');
-      }
-    },
-
-    onLeave: function(index, nextIndex, direction) {
-      if (nextIndex >= 4) {
-        $('header').fadeIn(300);
-      } else {
-        $('header').fadeOut(300);
-      }
+    // 헤더가 보이지 않게 되는 조건을 수정
+    if (scroll >= 2700 && scroll < 8000) {
+      $("header").addClass("show");
+    } else {
+      $("header").removeClass("show");
     }
   });
+});
 
-  // 헤더 항목 클릭 시 해당 섹션으로 이동
-  $('header ul li a').on('click', function(e) {
-    var sectionAnchor = $(this).attr('href').substring(1);
-    $.fn.fullpage.moveTo(sectionAnchor);
+  /* info */
+// 애니메이션을 적용할 요소
+const infoTitle = document.querySelector('.info_title');
 
-    $('header ul li a').removeClass('active');
-    $(this).addClass('active');
+// 스크롤 이벤트 리스너 추가
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 500) { // 스크롤 위치가 3700px 이상일 때
+    infoTitle.classList.add('animate');
+  }
+});
 
-    e.preventDefault();
-  });
+// 애니메이션을 적용할 요소
+const infoCenter = document.querySelector('.info_center');
+
+// 스크롤 이벤트 리스너 추가
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 500) { // 스크롤 위치가 3700px 이상일 때
+    infoCenter.classList.add('animate');
+  }
+});
+
+
 
   // Tab menu 활성화
   $(".tab_menu li[data-tab='tab1']").addClass("active");
@@ -50,187 +94,164 @@ $(document).ready(function() {
     $(this).addClass("active");
 
     let targetTab = $(this).attr("data-tab");
-
     $(".tab_contents .tab_content").removeClass("active");
     $("#" + targetTab).addClass("active");
   });
 
-  // web design page-1, page-2
-  let currentPage = 1;
-  const totalPages = 2;
 
-  function changePage(direction) {
-    if (direction === 'next') {
-      if (currentPage < totalPages) {
-        currentPage++;
-      }
-    } else if (direction === 'prev') {
-      if (currentPage > 1) {
-        currentPage--;
-      }
-    }
+  /* -----------모달창----------- */
 
-    updatePageVisibility();
+// modal-1 (UI/UX Design 모달)
+let itemIdxModal1 = 0;
+
+// 페이지 번호 표시
+const maxIdx1 = $(".modal-1 .modal-content>li").length;  // 총 아이템 개수 (7개)
+$(".modal-btn1 .g_page span:nth-child(2)").text(maxIdx1);  // 총 페이지 수 표시
+
+// 모달 열기
+$(".page-1>li").click(function() {
+  itemIdxModal1 = $(this).index(); 
+
+  $(".modal-btn1 .g_page span:nth-child(1)").text(itemIdxModal1 + 1); 
+  $("html").css({"overflow-y": "hidden"}); 
+  $(".modal-content>li").stop().fadeOut(); 
+  $(".modal-content>li").eq(itemIdxModal1).stop().fadeIn(); 
+  $(".modal-1").stop().fadeIn(); 
+  $(".modal-btn1").css("display", "block"); 
+  $('.modal-1').scrollTop(0);
+});
+
+// 이전 버튼 클릭
+$(".modal-btn1 .pre").click(function() {
+  if (itemIdxModal1 > 0) { 
+    $(".modal-content>li").eq(itemIdxModal1).fadeOut(); 
+    itemIdxModal1--; 
+    $(".modal-btn1 .g_page span:nth-child(1)").text(itemIdxModal1 + 1); 
+    $(".modal-content>li").eq(itemIdxModal1).stop().fadeIn();
+    $('.modal-1').scrollTop(0);
   }
+});
 
-  function updatePageVisibility() {
-    // tab1과 tab2 모두에서 page-1은 항상 보이도록 설정
-    const pages = $('.tab_content');
-    pages.not('#tab1').find('.contents_list').hide(); 
-    $('#tab1').find('.contents_list').show();
-
-    const currentPageElement = $('#tab2').find('.contents_list.page-' + currentPage);
-    currentPageElement.show();
-
-    const prevButton = $('.tab2-btn.prev');
-    const nextButton = $('.tab2-btn.next');
-
-    prevButton.prop('disabled', currentPage === 1);
-    nextButton.prop('disabled', currentPage === totalPages);
+// 다음 버튼 클릭
+$(".modal-btn1 .next").click(function() {
+  if (itemIdxModal1 < maxIdx1 - 1) {  
+    $(".modal-content>li").eq(itemIdxModal1).fadeOut(); 
+    itemIdxModal1++;  
+    $(".modal-btn1 .g_page span:nth-child(1)").text(itemIdxModal1 + 1);
+    $(".modal-content>li").eq(itemIdxModal1).stop().fadeIn();
+    $('.modal-1').scrollTop(0);
   }
+});
 
-  updatePageVisibility();
+// modal-2 (graphic design 모달)
+let itemIdxModal2 = 0; 
 
-  // 버튼 클릭 이벤트 핸들링
-  $('.tab2-btn.next').click(function() {
-    changePage('next');
-  });
+// 페이지 번호 표시
+const maxIdx2 = $(".modal-2 .modal-content2>li").length;  // 총 아이템 개수 (14개)
+$(".modal-btn2 .g_page span:nth-child(2)").text(maxIdx2);  // 총 페이지 수 표시
 
-  $('.tab2-btn.prev').click(function() {
-    changePage('prev');
-  });
+// 모달 열기
+$(".page-2>li").click(function() {
+  itemIdxModal2 = $(this).index(); 
 
-  /* --- 모달창 --- */
-  // 각 목록을 클릭했을 때
-  $(".card").click(function() {
-    itemIdx = $(this).index(); // 클릭한 카드의 인덱스를 가져옴
+  $(".modal-btn2 .g_page span:nth-child(1)").text(itemIdxModal2 + 1);
+  $("html").css({"overflow-y": "hidden"}); 
+  $(".modal-content2>li").stop().fadeOut(); 
+  $(".modal-content2>li").eq(itemIdxModal2).stop().fadeIn(); 
+  $(".modal-2").stop().fadeIn(); 
+  $(".modal-btn2").css("display", "block");
+  $('.modal-2').scrollTop(0);
+});
 
-    // 페이지 번호 업데이트
-    $(".g_page span:nth-child(1)").text(itemIdx + 1);
-
-    // 스크롤 숨기기
-    $("html, body").css({"overflow": "hidden"});
-
-    // 현재 탭이 UX · UI 디자인일 경우 modal1 열기
-    if ($('.tab_link.active').data('tab') === 'tab1') {
-      $(".modal1 .modal-content>li").eq(itemIdx).fadeIn();  // modal1의 해당 콘텐츠만 표시
-      openModal('modal1');  // modal1을 여는 함수 호출
-    }
-
-    // 현재 탭이 Graphic Design일 경우 modal2 열기
-    else if ($('.tab_link.active').data('tab') === 'tab2') {
-      $(".modal2 .modal-content>li").eq(itemIdx).fadeIn();  // modal2의 해당 콘텐츠만 표시
-      openModal('modal2');  // modal2을 여는 함수 호출
-    }
-  });
-
-  // 이전 버튼 클릭 시 (모든 모달 공통 처리)
-  $(".pre").click(function() {
-    if (itemIdx > 0) {
-      const modalSelector = $('.tab_link.active').data('tab') === 'tab1' ? '.modal1' : '.modal2';
-      $(modalSelector + " .modal-content>li").eq(itemIdx).fadeOut(); // 현재 표시된 아이템 숨기기
-      itemIdx--; // 인덱스 감소
-      $(".g_page span:nth-child(1)").text(itemIdx + 1); // 페이지 번호 업데이트
-      $(modalSelector + " .modal-content>li").eq(itemIdx).fadeIn(); // 새로운 아이템 표시
-      $(modalSelector).scrollTop(0);
-    }
-    
-  });
-
-  // 다음 버튼 클릭 시 (모든 모달 공통 처리)
-  $(".next").click(function() {
-    const modalSelector = $('.tab_link.active').data('tab') === 'tab1' ? '.modal1' : '.modal2';
-    $(modalSelector).scrollTop(0);
-    
-    if ($('.tab_link.active').data('tab') === 'tab1' && itemIdx < 6) {
-      $(modalSelector + " .modal-content>li").eq(itemIdx).fadeOut(); // 현재 표시된 아이템 숨기기
-      itemIdx++; // 인덱스 증가
-      $(".g_page span:nth-child(1)").text(itemIdx + 1); // 페이지 번호 업데이트
-      $(modalSelector + " .modal-content>li").eq(itemIdx).fadeIn(); // 새로운 아이템 표시
-    } 
-    else if ($('.tab_link.active').data('tab') === 'tab2' && itemIdx < 13) {
-      $(modalSelector + " .modal-content>li").eq(itemIdx).fadeOut(); // 현재 표시된 아이템 숨기기
-      itemIdx++; // 인덱스 증가
-      $(".g_page span:nth-child(1)").text(itemIdx + 1); // 페이지 번호 업데이트
-      $(modalSelector + " .modal-content>li").eq(itemIdx).fadeIn(); // 새로운 아이템 표시
-    }
-  });
-
-  // 모달 닫기 버튼 클릭 시
-  $(".close").click(function() {
-    closeModal();
-  });
-
-  // 모달을 여는 함수
-  function openModal(modalClass) {
-    const modal = document.querySelector('.' + modalClass);
-    modal.style.display = 'block';
-    modal.style.zIndex = 9999;
-    
-    const header = document.querySelector('header');
-    header.style.zIndex = 0;
-    
-    // 스크롤을 비활성화
-    $("html, body").css({"overflow": "hidden"});
-
-    // FullPage의 스크롤 비활성화
-    $.fn.fullpage.setAllowScrolling(false);
-    $.fn.fullpage.setKeyboardScrolling(false);
-
-    // 현재 활성화된 탭에 맞는 모달 버튼 보이기
-    const tab = $('.tab_link.active').data('tab');
-    if (tab === 'tab1') {
-        $(".modal-btn1").css("display", "block");
-        $(".modal-btn2").css("display", "none");
-    } else if (tab === 'tab2') {
-        $(".modal-btn2").css("display", "block");
-        $(".modal-btn1").css("display", "none");
-    }
-
-    // 모달 열릴 때 modal-btn도 보이도록 처리
-    $(".modal-btn").css("display", "block");
-
+// 이전 버튼 클릭
+$(".modal-btn2 .pre").click(function() {
+  if (itemIdxModal2 > 0) {  
+    $(".modal-content2>li").eq(itemIdxModal2).fadeOut(); 
+    itemIdxModal2--;  
+    $(".modal-btn2 .g_page span:nth-child(1)").text(itemIdxModal2 + 1);
+    $(".modal-content2>li").eq(itemIdxModal2).stop().fadeIn(); 
+    $('.modal-2').scrollTop(0);
   }
+});
 
-  // 모달을 닫을 때
-  function closeModal() {
-    const modalClass = $('.tab_link.active').data('tab') === 'tab1' ? 'modal1' : 'modal2';
-    const modal = document.querySelector('.' + modalClass);
-    modal.style.display = 'none';
-    
-    const header = document.querySelector('header');
-    header.style.zIndex = 10;
-    
-    // FullPage 스크롤 활성화
-    $.fn.fullpage.setAllowScrolling(true);
-    $.fn.fullpage.setKeyboardScrolling(true);
-    
-    // 모든 리스트 항목 숨기기
-    $("." + modalClass + " .modal-content>li").stop().hide();
-
-    // 모달 닫힐 때 modal-btn 숨기기
-    $(".modal-btn1").css("display", "none");
-    $(".modal-btn2").css("display", "none");
+// 다음 버튼 클릭
+$(".modal-btn2 .next").click(function() {
+  if (itemIdxModal2 < maxIdx2 - 1) { 
+    $(".modal-content2>li").eq(itemIdxModal2).fadeOut(); 
+    itemIdxModal2++;  
+    $(".modal-btn2 .g_page span:nth-child(1)").text(itemIdxModal2 + 1); 
+    $(".modal-content2>li").eq(itemIdxModal2).stop().fadeIn();  
+    $('.modal-2').scrollTop(0);
   }
+});
+
+
+// 닫기 버튼 (공통)
+$(".close").click(function() {
+  $("html").css({"overflow-y": "scroll"}); 
+  $(".modal-1, .modal-2").stop().fadeOut();
+  $(".modal-content>li, .modal-content2>li").stop().hide();
+  $(".modal-btn1").css("display", "none"); // modal-btn1 숨기기
+  $(".modal-btn2").css("display", "none"); // modal-btn2 숨기기
+});
+
+// 모달 외부 클릭시 닫기
+$(document).mouseup(function (e) {
+  var ModalClose = $(".modal-1, .modal-2");
+  if (ModalClose.has(e.target).length == 0) {
+    ModalClose.fadeOut(400); 
+    $(".modal-content>li, .modal-content2>li").stop().fadeOut();
+    $("html").css({"overflow-y": "scroll"});
+    $(".modal-btn1").css("display", "none"); // modal-btn1 숨기기
+    $(".modal-btn2").css("display", "none"); // modal-btn2 숨기기
+  }
+});
+
+// 모달을 닫을 때 상태 초기화 (modal-btn1, modal-btn2)
+function closeModal() {
+  modal.style.display = 'none';
+
+  // 헤더 z-index 복구
+  const header = document.querySelector('header');
+  header.style.zIndex = 10;
+
+  // 모든 리스트 항목 숨기기
+  $(".modal-1 .modal-content>li").stop().hide();
+  $(".modal-2 .modal-content2>li").stop().hide();
+}
 
 
 
   /* Web Publishing */
-  $(document).ready(function() {
-    // 처음에 #pub1만 보이도록 설정
-    $(".pub-content li").hide();  // 모든 콘텐츠를 숨김
-    $(".pub-content li.active").show();  // active인 #pub1만 보이게 설정
-  
-    $(".pub li").click(function() {
-      let pubResult = $(this).attr("data-alt");  // 클릭한 탭에 해당하는 콘텐츠 가져오기
-      
-      // 탭에 'active' 클래스를 추가하고, 다른 탭에서 'active' 클래스를 제거
-      $(this).addClass("active");
-      $(this).siblings().removeClass("active");
-  
-      // 모든 콘텐츠에서 'active' 클래스를 제거하고, 클릭한 탭에 맞는 콘텐츠에 'active' 클래스를 추가
-      $(".pub-content li").removeClass("active").hide();  // 모든 콘텐츠를 숨기고 'active' 클래스 제거
-      $("#" + pubResult).addClass("active").show();  // 클릭한 콘텐츠만 보이게 설정
-    });
+  $(".pub-content li").hide();
+  $(".pub-content li.active").show();
+
+  $(".pub li").click(function() {
+    let pubResult = $(this).attr("data-alt");
+    $(this).addClass("active").siblings().removeClass("active");
+    $(".pub-content li").removeClass("active").hide();
+    $("#" + pubResult).addClass("active").show();
   });
+
+  /* web Planning */
+
+  $(document).ready(function(){
+
+    $(".title").click(function(){
+      $(this).siblings(".title").removeClass("active");
+      $(this).toggleClass("active");
+      $(this).siblings(".content").stop().slideUp();
+      $(this).next().stop().slideToggle();
+    });
+  
+  });
+
+
+
+
+
+
+
 });
+
+

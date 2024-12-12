@@ -7,86 +7,80 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/jquery.fullpage.css">
+  <link rel="shorcut icon" type="image/x-icon" href="image/my-logo.ico">
 
 
 </head>
-<body>
-      <!-- tab1 모달창 버튼 -->
-      <div class="modal-btn1">
-        <p class="close"><i class="material-icons">clear</i></p>
-        <div class="lr-btn">
-          <p class="pre"><i class="material-icons">keyboard_arrow_left</i></p>
-          <p class="next"><i class="material-icons">keyboard_arrow_right</i></p>
-        </div>
-        <p class="g_page"><span>1</span> / <span>7</span></p>
-      </div>	
 
-      <!-- tab2 모달창 버튼 -->
-      <div class="modal-btn2">
-        <p class="close"><i class="material-icons">clear</i></p>
-        <div class="lr-btn">
-          <p class="pre"><i class="material-icons">keyboard_arrow_left</i></p>
-          <p class="next"><i class="material-icons">keyboard_arrow_right</i></p>
-        </div>
-        <p class="g_page"><span>1</span> / <span>14</span></p>
-      </div>
+
+
+<body>
+
+  <p id="txt1">0</p>
+
+<!--스크롤시 나오는 TOP버튼-->
+<div class="top_btn">
+  <a href="#"><i class="material-icons">keyboard_arrow_up</i></a>
+</div>
+	
+
+
 
 <div class="wrap">
   <header>
     <ul>
-      <li data-menuanchor="section4"><a href="#section4">Web Design</a></li>
-      <li data-menuanchor="section5"><a href="#section5">Web Publishing</a></li>
-      <li data-menuanchor="section6"><a href="#section6">Mobile</a></li>
-      <li data-menuanchor="section7"><a href="#section7">Web Planning</a></li>
+      <li><a href="#section4">Web Design</a></li>
+      <li><a href="#section5">Web Publishing</a></li>
+      <li><a href="#section6">Mobile</a></li>
+      <li><a href="#section7">Web Planning</a></li>
     </ul>
   </header>
 
-    <!-- 본문-->
-  <div id="fullpage">
 
-    <!-- 01. cover -->
-    <div class="section">
-      <div class="cover_contents">
-          <div class="cover_title">
-            <p>PORTFOLIO</p>
-          </div>
-          <div class="cover_center">
-            <div class="cover_left">
-                L<br>E<br>E<br>Y<br>E<br>O<br>N<br>S<br>O<br>O
-              <p>&copy;2024. Lee Yeonsoo All Rights Reserved.</p>
-            </div>
-            <div class="cover_right">
-              새로운 시각으로 아이디어를 창조하다.
-            </div>
-          </div>
-        </div>
+<!-- 01. cover -->
+<div id="section1">
+  <div class="cover_contents">
+    <div class="cover_title">
+      <p>PORTFOLIO</p>
     </div>
+    <div class="cover_center">
+      <div class="cover_left">
+        L<br>E<br>E<br>Y<br>E<br>O<br>N<br>S<br>O<br>O
+        <p>&copy;2024. Lee Yeonsoo All Rights Reserved.</p>
+      </div>
+      <div class="cover_right">
+        새로운 시각으로 아이디어를 창조하다.
+      </div>
+    </div>
+  </div>
+</div> 
+
     <!-- 02. INFOMATION -->
-    <div class="section">
+    <div id="section2">
       <div class="info_contents">
         <div class="info_title">
-          <p>INFOMATION</p>
-        </div>
-
-        <div class="info_center">
+          <p>INFORMATION</p>
           <div class="info_top">
             <p>몸과 마음의 조화를 원할 때 끌리는 색, 보라색.<br>숭고하고 몽환적인 빛깔이기도 합니다.<br>저는 이처럼 보라색과 같이 잡힐듯 잡히지 않는 신비로움을<br>끊임없이 탐구하고 도전을 멈추지 않으며<br>새로운 시각에서 조화를 이끌어내고자 합니다</p>
           </div>
+        </div>
+
+        <div class="info_center">
           <div class="info_bottom">
             <p>CONTENTS</p>
-            <div><span>01 _ </span>Profile</div>
-            <div><span>02 _ </span>Web Design<em>UI/UX Design(7) / Graphic Design(14)</em></div>
-            <div><span>03 _ </span>Web Publishing<em>Kanine / ridibooks / MGC coffee</em></div>
-            <div><span>04 _ </span>Mobile<em>inbody</em></div>
-            <div><span>05 _ </span>Web Planning</div>
+            <a href="#section3"><div><span>01 _ </span>Profile</div></a>
+            <a href="#section4"><div><span>02 _ </span>Web Design<em>UI/UX Design(7) / Graphic Design(14)</em></div></a>
+            <a href="#section5"><div><span>03 _ </span>Web Publishing<em>Kanine / ridibooks / MGC coffee</em></div></a>
+            <a href="#section6"><div><span>04 _ </span>Mobile<em>inbody / albachunkuk</em></div></a>
+            <a href="#section7"><div><span>05 _ </span>Web Planning</div></a>
+
           </div>
         </div>
         
       </div>
     </div>
     <!-- 03. ABOUT --> 
-    <div class="section">
+    <div id="section3">
       <div class="about_contents">
         <div class="about_title">
           <h1>ABOUT</h1>
@@ -101,8 +95,9 @@
         </div>
       </div>
     </div>
+
     <!-- 04. Web Design -->
-    <div class="section">
+    <div id="section4">
       <div class="design_contents">
         <div class="design_title">
           <h1>Web Design</h1>
@@ -116,8 +111,8 @@
 
           <div class="tab_contents">
             <div id="tab1" class="tab_content active">
-              <div class="contents_list">
-                <div class="card card-1-1">
+              <ul class="contents_list page-1">
+                <li class="card card-1-1">
                   <div class="tool">
                     <span class="ps"></span>
                     <span class="ai"></span>
@@ -126,8 +121,8 @@
                   <p>
                     <span>서울우유 요하임 리디자인</span>
                   </p>
-                </div>
-                <div class="card card-1-2">
+                </li>
+                <li class="card card-1-2">
                   <div class="tool">
                     <span class="ps"></span>
                   </div>
@@ -135,8 +130,8 @@
                   <p>
                     <span>입체 그림자</span>
                   </p>
-                </div>
-                <div class="card card-1-3">
+                </li>
+                <li class="card card-1-3">
                   <div class="tool">
                     <span class="ps"></span>
                   </div>
@@ -144,8 +139,8 @@
                   <p>
                     <span>리본과 블랜드</span>
                   </p>
-                </div>
-                <div class="card card-1-4">
+                </li>
+                <li class="card card-1-4">
                   <div class="tool">
                     <span class="fig"></span>
                   </div>
@@ -153,8 +148,8 @@
                   <p>
                     <span>컬러 유어 이모션 반응형 랜딩페이지</span>
                   </p>
-                </div>
-                <div class="card card-1-5">
+                </li>
+                <li class="card card-1-5">
                   <div class="tool">
                     <span class="ps"></span>
                     <span class="ai"></span>
@@ -164,8 +159,8 @@
                   <p>
                     <span>블루보틀</span>
                   </p>
-                </div>
-                <div class="card card-1-6">
+                </li>
+                <li class="card card-1-6">
                   <div class="tool">
                     <span class="ps"></span>
                     <span class="ai"></span>
@@ -175,8 +170,8 @@
                   <p>
                     <span>리디북스</span>
                   </p>
-                </div>
-                <div class="card card-1-7">
+                </li>
+                <li class="card card-1-7">
                   <div class="tool">
                     <span class="ps"></span>
                     <span class="ai"></span>
@@ -186,9 +181,9 @@
                   <p>
                     <span>그랑핸드</span>
                   </p>
-                </div>
-              </div>
-              <div class="modal1"> <!--popup_box-->
+                </li>
+              </ul>
+              <div class="modal-1"> <!--popup_box-->
                 <div class="modalBox">
                   <ul class="modal-content">
                     <li><img src="image/pop1-1.jpg" alt="">
@@ -205,7 +200,17 @@
                     <li><img src="image/pop1-3.jpg" alt=""></li>
                     <li><img src="image/pop1-3.jpg" alt=""></li>
                     <li><img src="image/pop1-3.jpg" alt=""></li>
-                  </ul>		
+                  </ul>	
+                  
+                        <!-- tab1 모달창 버튼 -->
+      <div class="modal-btn1">
+        <p class="close"><i class="material-icons">clear</i></p>
+        <div class="lr-btn">
+          <p class="pre"><i class="material-icons">keyboard_arrow_left</i></p>
+          <p class="next"><i class="material-icons">keyboard_arrow_right</i></p>
+        </div>
+        <p class="g_page"><span>1</span> / <span>7</span></p>
+      </div>	
                 </div>			
               </div>
               
@@ -213,116 +218,111 @@
           </div>
 
           <div id="tab2" class="tab_content">
-            <!-- 첫 번째 페이지 -->
-            <div class="contents_list page-1">
-              <div class="card card-2-1">
+            <ul class="contents_list page-2">
+              <li class="card card-2-1">
                 <div class="tool">
                   <span class="ps"></span>
                   <span class="ai"></span>
                 </div>
                 <div><img src="image/card-2-1.jpg" alt=""></div>
                 <p><span>8월 할인 쿠폰 안내 팝업 배너 디자인</span></p>
-              </div>
-              <div class="card card-2-2">
+              </li>
+              <li class="card card-2-2">
                 <div class="tool">
                   <span class="ps"></span>
                 </div>
                 <div><img src="image/card-2-2.jpg" alt=""></div>
                 <p><span>디자이너 채용 안내 팝업 배너 디자인</span></p>
-              </div>
-              <div class="card card-2-3">
+              </li>
+              <li class="card card-2-3">
                 <div class="tool">
                   <span class="ps"></span>
                 </div>
                 <div><img src="image/card-2-3.jpg" alt=""></div>
                 <p><span>치과 이벤트 안내 팝업 배너 디자인</span></p>
-              </div>
-              <div class="card card-2-4">
+              </li>
+              <li class="card card-2-4">
                 <div class="tool">
                   <span class="ps"></span>
                 </div>
                 <div><img src="image/card-2-4.jpg" alt=""></div>
                 <p><span>LG 얼음 정수기 이벤트 페이지 & 배너 디자인</span></p>
-              </div>
-              <div class="card card-2-5">
+              </li>
+              <li class="card card-2-5">
                 <div class="tool">
                   <span class="pc"></span>
                 </div>
                 <div><img src="image/card-2-5.jpg" alt=""></div>
                 <p><span>포포 스티커</span></p>
-              </div>
-              <div class="card card-2-6">
+              </li>
+              <li class="card card-2-6">
                 <div class="tool">
                   <span class="pc"></span>
                 </div>
                 <div><img src="image/card-2-6.jpg" alt=""></div>
                 <p><span>레이 스티커</span></p>
-              </div>
-              <div class="card card-2-7">
+              </li>
+              <li class="card card-2-7">
                 <div class="tool">
                   <span class="pc"></span>
                 </div>
                 <div><img src="image/card-2-7.jpg" alt=""></div>
                 <p><span>후후 스티커</span></p>
-              </div>
-              <div class="card card-2-8">
+              </li>
+              <li class="card card-2-8">
                 <div class="tool">
                   <span class="pc"></span>
                 </div>
                 <div><img src="image/card-2-8.jpg" alt=""></div>
                 <p><span>들판 엽서</span></p>
-              </div>
-            </div>
-          
-            <!-- 두 번째 페이지 (초기에는 숨김) -->
-            <div class="contents_list page-2" style="display: none;">
-              <div class="card card-2-9">
+              </li>
+              <li class="card card-2-9">
                 <div class="tool">
                   <span class="pc"></span>
                 </div>
                 <div><img src="image/card-2-9.jpg" alt=""></div>
                 <p><span>바다 엽서</span></p>
-              </div>
-              <div class="card card-2-10">
+              </li>
+              <li class="card card-2-10">
                 <div class="tool">
                   <span class="pc"></span>
                 </div>
                 <div><img src="image/card-2-10.jpg" alt=""></div>
                 <p><span>낚시를 가요 엽서</span></p>
-              </div>
-              <div class="card card-2-11">
+              </li>
+              <li class="card card-2-11">
                 <div class="tool">
                   <span class="fig"></span>
                 </div>
                 <div><img src="image/card-2-11.jpg" alt=""></div>
                 <p><span>이니셜 로고</span></p>
-              </div>
-              <div class="card card-2-12">
+              </li>
+              <li class="card card-2-12">
                 <div class="tool">
                   <span class="ps"></span>
                 </div>
                 <div><img src="image/card-2-12.jpg" alt=""></div>
                 <p><span>국민카드 홍보 배너 리디자인</span></p>
-              </div>
-              <div class="card card-2-13">
+              </li>
+              <li class="card card-2-13">
                 <div class="tool">
                   <span class="ps"></span>
                 </div>
                 <div><img src="image/card-2-13.jpg" alt=""></div>
                 <p><span>여러 사이즈 배너 디자인</span></p>
-              </div>
-              <div class="card card-2-14">
+              </li>
+              <li class="card card-2-14">
                 <div class="tool">
                   <span class="ps"></span>
                 </div>
                 <div><img src="image/card-2-14.jpg" alt=""></div>
                 <p><span>다이어리</span></p>
-              </div>
-            </div>
+              </li>
+            </ul>
 
-            <div class="modal2"> <!--popup_box-->
-              <div class="modalBox">
-                <ul class="modal-content">
+            <div class="modal-2"> <!--popup_box-->
+              <div class="modalBox2">
+                <ul class="modal-content2">
                   <li><img src="image/pop2-1.jpg" alt="">
                   </li>
                   <li><img src="image/pop2-2.jpg" alt=""></li>
@@ -338,186 +338,400 @@
                   <li><img src="image/pop2-12.jpg" alt=""></li>
                   <li><img src="image/pop2-13.jpg" alt=""></li>
                   <li><img src="image/pop2-14.jpg" alt=""></li>
-                </ul>
-
-              </div>			
-            </div>
-          
-            <!-- 네비게이션 버튼 -->
-            <div class="tab2-navigation">
-              <button class="tab2-btn prev" onclick="changePage('prev')" disabled>Prev</button>
-              <button class="tab2-btn next" onclick="changePage('next')">Next</button>
-            </div>
+              </ul>
+                    <!-- tab2 모달창 버튼 -->
+      <div class="modal-btn2">
+        <p class="close"><i class="material-icons">clear</i></p>
+        <div class="lr-btn">
+          <p class="pre"><i class="material-icons">keyboard_arrow_left</i></p>
+          <p class="next"><i class="material-icons">keyboard_arrow_right</i></p>
+        </div>
+        <p class="g_page"><span>1</span> / <span>14</span></p>
+      </div>
+            </div>			
+          </div>
+          <button class="load-more">Load More</button>
           </div>
           </div>
         </div>
       </div>
     </div>
-
 
     <!-- 05. Web Publishing -->
-    <div class="section">
-      <div class="pub_inner">
-        <div class="pub_title">
-          <h1>Web Publishing</h1>
-        </div>
-        <div id="pubmenu">
-          <!--탭메뉴-->
-          <div class="pub-header">
-            <ul class="pub">
-              <li id="pubh" data-alt="pub1" class="active"><strong>01</strong>MCG COFFEE</li>
-              <li id="pubh" data-alt="pub2"><strong>02</strong>RIDIBOOKS</li>
-              <li id="pubh" data-alt="pub3"><strong>03</strong>KANINE</li>   
-            </ul>
+    <div id="section5">
+          <div class="pub_inner">
+            <div class="pub_title">
+              <h1>Web Publishing</h1>
+            </div>
+            <div id="pubmenu">
+              <!--탭메뉴-->
+              <div class="pub-header">
+                <ul class="pub">
+                  <li data-alt="pub1" class="active"><strong>01</strong>MCG COFFEE</li>
+                  <li data-alt="pub2"><strong>02</strong>RIDIBOOKS</li>
+                  <li data-alt="pub3"><strong>03</strong>KANINE</li>   
+                </ul>
+              </div>
+          
+              <!-- 탭메뉴 클릭시 바뀌는 하단내용 -->
+            <div class="pub-contents">
+              <ul class="pub-content">
+                <li id="pub1" class="active" data-alt="pub1">
+                  <div class="pub-detail">
+                    <h2>MEGA COFFEE
+                      <br>
+                      WEB REDESIGN
+                    </h2>
+                    <h3>메가커피 전체 페이지 리디자인</h3>
+                    <div class="pub_desc_center">
+                      <div class="pub_desc_cel_top">
+                        <p>PC WEPSITE</p>
+                          <p>PC 고정형 웹</p>
+                          <p>웹표준 준수</p>
+                      </div>
+                      <div class="pub_desc_center_row">
+                        <div class="pub_desc_cel">
+                          <p>제작 범위</p>
+                            <span>전체페이지(main 1 + sub 10)</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>제작 기간</p>
+                          <span>10 days</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>개발 환경</p>
+                          <span>HTML5 CSS3 jQuery Figma</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>작업 기여도</p>
+                          <span>개인 작업 100%</span>
+                        </div>
+                        <div class="pub_desc_cel cel1">
+                          * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
+                        </div>
+                      </div>
+                    </div>
+                    <a href="http://leeys.dothome.co.kr/" target="_blank" class="pub_desc_btn">
+                      <span>완성된 웹사이트로 이동</span>
+                    </a>
+                  </div>
+                  <div class="pub-img-1 img1"><img src="image/coffee-mockup.png" alt=""></div>
+                </li>
+                <li id="pub2" data-alt="pub2">
+                  <div class="pub-detail">
+                    <h2>RIDIBOOKS
+                      <br>
+                      WEB REDESIGN
+                    </h2>
+                    <h3>리디북스 메인 페이지 리디자인</h3>
+                    <div  class="pub_desc_center">
+                      <div class="pub_desc_cel_top">
+                        <p>PC WEPSITE</p>
+                          <p>PC 고정형 웹</p>
+                          <p>웹표준 준수</p>
+                      </div>
+                      <div class="pub_desc_center_row">
+                        <div class="pub_desc_cel">
+                          <p>제작 범위</p>
+                            <span>메인 페이지(main 1)</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>제작 기간</p>
+                          <span>1 week</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>개발 환경</p>
+                          <span>HTML5 CSS3 jQuery Figma photoshop</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>작업 기여도</p>
+                          <span>개인 작업 100%</span>
+                        </div>
+                        <div class="pub_desc_cel cel1">
+                          * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
+                        </div>
+                      </div>
+                    </div>
+                    <a href="http://leeys.dothome.co.kr/" target="_blank" class="pub_desc_btn">
+                      <span>완성된 웹사이트로 이동</span>
+                    </a>
+                  </div>
+                  <div class="pub-img-2"><img src="image/ridi-mockup.png" alt=""></div>
+                </li>
+                <li id="pub3" data-alt="pub3">
+                  <div class="pub-detail">
+                    <h2>KANINE
+                      <br>
+                      WEB REDESIGN
+                    </h2>
+                    <h3>케나인 메인 페이지 리디자인</h3>
+                    <div  class="pub_desc_center">
+                      <div class="pub_desc_cel_top">
+                        <p>PC WEPSITE</p>
+                          <p>PC 고정형 웹</p>
+                          <p>웹표준 준수</p>
+                      </div>
+                      <div class="pub_desc_center_row">
+                        <div class="pub_desc_cel">
+                          <p>제작 범위</p>
+                            <span>메인 페이지(main 1)</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>제작 기간</p>
+                          <span>1 week</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>개발 환경</p>
+                          <span>HTML5 CSS3</span>
+                        </div>
+                        <div class="pub_desc_cel">
+                          <p>작업 기여도</p>
+                          <span>개인 작업 100%</span>
+                        </div>
+                        <div class="pub_desc_cel cel1">
+                          * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
+                        </div>
+                      </div>
+                    </div>
+                    <a href="http://leeys.dothome.co.kr/" target="_blank" class="pub_desc_btn">
+                      <span>완성된 웹사이트로 이동</span>
+                    </a>
+                  </div>
+                  <div class="pub-img-3"><img src="image/kanine-mockup.png" alt=""></div>
+                </li>
+              </ul>
+            </div>
+            
           </div>
-      
-          <!-- 탭메뉴 클릭시 바뀌는 하단내용 -->
-        <div class="pub-contents">
-          <ul class="pub-content">
-            <li id="pub1" class="active" data-alt="pub1">
-              <div class="pub-detail">
-                <h2>MEGA COFFEE
-                  <br>
-                  WEB REDESIGN
-                </h2>
-                <h3>메가커피 전체 페이지 리디자인</h3>
-                <div class="pub_desc_center">
-                  <div class="pub_desc_cel_top">
-                    <p>PC WEPSITE</p>
-                      <p>PC 고정형 웹</p>
-                      <p>웹표준 준수</p>
-                  </div>
-                  <div class="pub_desc_center_row">
-                    <div class="pub_desc_cel">
-                      <p>제작 범위</p>
-                        <span>전체페이지(main 1 + sub 10)</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>제작 기간</p>
-                      <span>10 days</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>개발 환경</p>
-                      <span>HTML5 CSS3 jQuery Figma</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>작업 기여도</p>
-                      <span>개인 작업 100%</span>
-                    </div>
-                    <div class="pub_desc_cel cel1">
-                      * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
-                    </div>
-                  </div>
-                </div>
-                <a href="http://leeys.dothome.co.kr/" target="_blank" class="pub_desc_btn">
-                  <span>완성된 웹사이트로 이동</span>
-                </a>
-              </div>
-              <div class="pub-img-1 img1"><img src="image/coffee-mockup.png" alt=""></div>
-            </li>
-            <li id="pub2" data-alt="pub2">
-              <div class="pub-detail">
-                <h2>RIDIBOOKS
-                  <br>
-                  WEB REDESIGN
-                </h2>
-                <h3>리디북스 메인 페이지 리디자인</h3>
-                <div  class="pub_desc_center">
-                  <div class="pub_desc_cel_top">
-                    <p>PC WEPSITE</p>
-                      <p>PC 고정형 웹</p>
-                      <p>웹표준 준수</p>
-                  </div>
-                  <div class="pub_desc_center_row">
-                    <div class="pub_desc_cel">
-                      <p>제작 범위</p>
-                        <span>메인 페이지(main 1)</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>제작 기간</p>
-                      <span>1 week</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>개발 환경</p>
-                      <span>HTML5 CSS3 jQuery Figma photoshop</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>작업 기여도</p>
-                      <span>개인 작업 100%</span>
-                    </div>
-                    <div class="pub_desc_cel cel1">
-                      * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
-                    </div>
-                  </div>
-                </div>
-                <a href="http://leeys.dothome.co.kr/" target="_blank" class="pub_desc_btn">
-                  <span>완성된 웹사이트로 이동</span>
-                </a>
-              </div>
-              <div class="pub-img-2"><img src="image/ridi-mockup.png" alt=""></div>
-            </li>
-            <li id="pub3" data-alt="pub3">
-              <div class="pub-detail">
-                <h2>KANINE
-                  <br>
-                  WEB REDESIGN
-                </h2>
-                <h3>케나인 메인 페이지 리디자인</h3>
-                <div  class="pub_desc_center">
-                  <div class="pub_desc_cel_top">
-                    <p>PC WEPSITE</p>
-                      <p>PC 고정형 웹</p>
-                      <p>웹표준 준수</p>
-                  </div>
-                  <div class="pub_desc_center_row">
-                    <div class="pub_desc_cel">
-                      <p>제작 범위</p>
-                        <span>메인 페이지(main 1)</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>제작 기간</p>
-                      <span>1 week</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>개발 환경</p>
-                      <span>HTML5 CSS3</span>
-                    </div>
-                    <div class="pub_desc_cel">
-                      <p>작업 기여도</p>
-                      <span>개인 작업 100%</span>
-                    </div>
-                    <div class="pub_desc_cel cel1">
-                      * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
-                    </div>
-                  </div>
-                </div>
-                <a href="http://leeys.dothome.co.kr/" target="_blank" class="pub_desc_btn">
-                  <span>완성된 웹사이트로 이동</span>
-                </a>
-              </div>
-              <div class="pub-img-3"><img src="image/kanine-mockup.png" alt=""></div>
-            </li>
-          </ul>
         </div>
-        
+    </div>
+    
+    <!-- 06. Mobile-->
+    <div id="section6">
+      <div class="mobile_inner">
+        <div class="mobile_title">
+          <h1>Mobile</h1>
+        </div>
+<!-- Swiper -->
+<div class="mobile-contents swiper mobileSwiper">
+  <ul class="mobile-content swiper-wrapper">
+    <li id="mobile1" class="swiper-slide">
+      <div class="mobile-img-1"><img src="image/inbody-mockup.png" alt=""></div>
+      <div class="mobile-detail">
+        <div class="mobile-detail-title">
+          <h2>INBODY
+            <br>
+            MOBILE APP DESIGN
+          </h2>
+          <h3>인바디 어플 리디자인</h3>
+          <div class="mobile_desc_cel_top-1">
+            <p>Mobile App</p>
+          </div>
+        </div>
+        <div class="mobile_desc_center">
+          
+          <div class="mobile_desc_center_row">
+            <div class="mobile_desc_cel">
+              <p>제작 범위</p>
+                <span>전체페이지(main 1 + sub 8)</span>
+            </div>
+            <div class="mobile_desc_cel">
+              <p>제작 기간</p>
+              <span>2 days</span>
+            </div>
+            <div class="mobile_desc_cel">
+              <p>사용툴</p>
+              <span>Figma photoshop</span>
+            </div>
+            <div class="mobile_desc_cel">
+              <p>작업 기여도</p>
+              <span>개인 작업 100%</span>
+            </div>
+            <div class="mobile_desc_cel cel1">
+              * 기존 어플을 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
+            </div>
+          </div>
+        </div>
+        <a href="#none" class="mob_desc_btn">
+          <span>뷰페이지로 이동</span>
+        </a>
+      </div>
+    </li>
+    <li class="swiper-slide" id="mobile2">
+      <div class="mobile-img-2"><img src="image/alba-mockup.png" alt=""></div>
+      <div class="mobile-detail">
+        <div class="mobile-detail-title">
+          <h2>ALBACHUNKUK
+            <br>
+            MOBILE REDESIGN
+          </h2>
+          <h3>알바천국 모바일 웹 리디자인</h3>
+          <div class="mobile_desc_cel_top">
+            <p>MOBILE WEPSITE</p>
+              <p>MOBILE 적응형</p>
+              <p>웹표준 준수</p>
+          </div>
+        </div>
+        <div  class="mobile_desc_center">
+          
+          <div class="mobile_desc_center_row">
+            <div class="mobile_desc_cel">
+              <p>제작 범위</p>
+                <span>메인 페이지(main 1)</span>
+            </div>
+            <div class="mobile_desc_cel">
+              <p>제작 기간</p>
+              <span>2 days</span>
+            </div>
+            <div class="mobile_desc_cel">
+              <p>개발 환경</p>
+              <span>HTML5 CSS3 jQuery Figma photoshop</span>
+            </div>
+            <div class="mobile_desc_cel">
+              <p>작업 기여도</p>
+              <span>개인 작업 100%</span>
+            </div>
+            <div class="mobile_desc_cel cel1">
+              * 기존 웹사이트를 기획 및 디자인하여 비상업적 포트폴리오 용도로 제작하였습니다.
+            </div>
+          </div>
+        </div>
+        <div class="mobile-btn">
+          <a href="http://leeys.dothome.co.kr/" target="_blank" class="mob_desc_btn">
+            <span>MOBILE VIEW</span>
+          </a>
+          <a href="" target="_blank" class="mob_desc_btn">
+            <span>Figma</span>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
       </div>
     </div>
-    </div>
 
-  <!-- 06. Mobile-->
-  <div class="section">
-    <h1>Section 06</h1>
-  </div>
-  <!-- 07. Web Planning-->
-  <div class="section">
-    <h1>Section 07</h1>
-  </div>
-    <!-- 작게 만들고자 하는 영역에 fp-auto-height 클래스 적용 -->
-    <footer class="section fp-auto-height">
-      <h1>Footer</h1>
+
+    <!-- 07. Web Planning-->
+    <div id="section7">
+      <div class="plan_inner">
+        <div class="plan_title">
+          <h1>Web Planning</h1>
+        </div>
+        <div class="accordion">
+          <div class="title">
+            <img src="image/plan_title1.png" alt=""><h2>UX/UI Design Planning</h2>
+          </div>
+          <div class="content">
+            <div class="swiper planSwiper btn1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/1-cover.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/1-(1).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/1-(2).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/1-(3).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/1-(4).png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+    
+          <div class="title">
+            <img src="image/plan_title2.png" alt=""><h2>Publishing Planning</h2>
+          </div>
+          <div class="content">
+            <div class="swiper planSwiper btn1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/2-(1).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(2).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(3).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(4).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(5).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(6).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(7).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(8).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(9).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(10).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(11).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(12).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(13).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(14).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(15).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(16).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(17).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(18).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(19).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(20).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(21).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(22).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(23).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/2-(24).png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+    
+          <div class="title">
+            <img src="image/plan_title3.jpg" alt=""><h2>Mobile Planning</h2>
+          </div>
+          <div class="content">
+            <div class="swiper planSwiper btn1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/3-cover.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(1).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(2).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(3).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(4).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(5).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(6).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(7).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(8).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(9).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(10).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(11).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(12).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/3-(13).png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="title">
+            <img src="image/plan_title4.png" alt=""><h2>Portfolio Planning</h2>
+          </div>
+          <div class="content">
+            <div class="swiper planSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/4-cover.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-index.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-(1).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-(2).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-(3).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-(4).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-(5).png" alt=""></div>
+                <div class="swiper-slide"><img src="image/4-(6).png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="end">
+      <div class="end-top">
+        <p><em>끊임없이 탐구</em>하고 <em>도전</em>을 멈추지 않는 UX/UI 디자이너 <br> 이연수였습니다<strong>.</strong></p>
+      </div>
+      <div class="end-bottom">
+        <p>이연수 <br> UX/UI Designer
+        </p>
+      </div>
     </footer>
   </div>
-</div>
+
+
 
 
 
@@ -530,17 +744,23 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper", {
-      cssMode: true,
+    var swiper = new Swiper(".mobileSwiper", {
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+    });
+  </script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".planSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
       pagination: {
         el: ".swiper-pagination",
+        clickable: true,
       },
-      mousewheel: true,
-      keyboard: true,
     });
   </script>
 
@@ -548,7 +768,30 @@
   <script src="js/jquery-3.7.0.min.js"></script>
   <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/jquery.fullpage.js"></script>
 
+  <script>
+
+		/* 
+		$("선택요소").slice(시작번호,종료번호) -> 요소의 시작인덱스번호와 종료인텍스전까지선택(종료인덱스번호가 없으면 끝까지 자동으로 선택됨) 
+		$("선택요소:hidden") -> 해당요소를 보이지 않게 하는 선택자로 css에서 display:none인 요소를 선택하는 선택자
+		*/
+		$(document).ready(function() {
+
+// 최초에 4개 보이기
+$(".page-2 .card").slice(0, 8).show();
+
+// 버튼 클릭하면 4개씩 더 보이기
+$("#tab2 .load-more").click(function() {
+		// display:none; 속성을 사용한 요소들을 찾아서 3개씩 나오게 함
+		$(".page-2 .card:hidden").slice(0, 8).show();
+
+		// 더 이상 보여질 이미지가 없으면 버튼은 사라지게 하기
+		if ($(".page-2 .card:hidden").length === 0) {
+				$(this).hide(); 
+		}
+});
+});
+  </script>
+  
 </body>
 </html>
