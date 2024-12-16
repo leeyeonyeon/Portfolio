@@ -19,6 +19,7 @@ section h2{
   font-size: 6vh;
 }
 
+
 /* Scroll Bar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -266,19 +267,198 @@ header ul li a:hover {
 .about_contents{
   width: 100%;
   height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 60px;
 }
 .about_center{
   padding: 0 70px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  gap: 20vh;
   width: 100%;
   height: 60%;
+  font-size: 1.6vh;
 }
 
 .about_title{
   padding: 0 70px;
+  padding-bottom: 30px;
 }
+.about_left{
+  opacity: 0;
+}
+.about_left img{
+  width: 60vh;
+  height: auto;
+  border-radius: 50vh;
+}
+.about_left.animate2 {
+  animation: slideRight 2s ease-in-out;
+  opacity: 1;
+}
+
+.about_right{
+  width: 100vh;
+  padding-top: 3vh;
+  color: #29212b;
+  opacity: 0;
+}
+.about_right.animate2 {
+  animation: slideLeft 2s ease-in-out;
+  opacity: 1;
+}
+
+.about_right h3{
+  font-weight: 500;
+  color: #6d384cb9;
+  padding-bottom: 2vh;
+}
+.about_right_top{
+  display: flex;
+  gap: 4vh;
+  margin: 4vh 0;
+}
+.about_right_bottom{
+  display: flex;
+  gap: 2vh;
+}
+
+.about_tl{
+  width: 20vh;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 4vh;
+  border-radius: 20px;
+}
+.about_tl p{
+  margin: 6px 0;
+}
+.about_tl b{
+  font-size: 2vh;
+}
+
+.about_tr{
+  width: 48vh;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 4vh;
+  border-radius: 20px;
+}
+.about_ex span{
+  color: #666;
+}
+.about_ex{
+  margin-bottom: 6px;
+}
+
+.about_bl{
+  width: 30vh;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 4vh;
+  border-radius: 20px;
+}
+
+.about_skill {
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+}
+
+
+.about_skill div {
+  flex: 1;
+}
+
+.skill {
+  height: 10px;
+  background-color: #f3cef8;
+  border-radius: 5px;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  position: relative;
+}
+
+.bar1:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #cf8ad8;
+  width: 95%;
+  border-radius: 5px;
+}
+
+
+.bar2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #cf8ad8;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.bar3:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #cf8ad8;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.bar4:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #cf8ad8;
+  width: 70%;
+  border-radius: 5px;
+}
+
+.bar5:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #cf8ad8;
+  width: 70%;
+  border-radius: 5px;
+}
+
+.about_skill span {
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+
+.about_br{
+    width: 38vh;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 4vh;
+  border-radius: 20px;
+}
+.about_br_edu{
+  display: flex;
+  gap: 2vh;
+}
+.about_edu_sub{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2vh;
+}
+.about_edu_sub span:nth-child(2){
+  color: #666;
+}
+
+
 
 
 /*----- 04. Web Design -----*/
@@ -830,6 +1010,7 @@ h3{
   height: 100vh;
   background: url(../image/cover3.png) center no-repeat;
   background-size: cover;
+  padding-bottom: 60px;
 
 }
 .mobile_title{

@@ -83,6 +83,26 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// 애니메이션을 적용할 요소
+const aboutLeft = document.querySelector('.about_left');
+
+// 스크롤 이벤트 리스너 추가
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 1700) { // 스크롤 위치가 3700px 이상일 때
+    aboutLeft.classList.add('animate2');
+  }
+});
+
+// 애니메이션을 적용할 요소
+const aboutRight = document.querySelector('.about_right');
+
+// 스크롤 이벤트 리스너 추가
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 1700) { // 스크롤 위치가 3700px 이상일 때
+    aboutRight.classList.add('animate2');
+  }
+});
+
 
 
   // Tab menu 활성화
