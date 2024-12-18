@@ -6,6 +6,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 #txt1{
   position:fixed;top:70px;right:10px;color: transparent;}
@@ -20,6 +26,16 @@ section h2{
   font-size: 6vh;
 }
 
+.Contribution{
+  background-color: rgba(98, 0, 255, 0.6);
+  color: #fff;
+  padding: 2px 2vh;
+  border-radius: 20px;
+  transition: 1s;
+}
+.Contribution:hover{
+  background-color: rgba(49, 0, 128, 0.8);
+}
 
 /* Scroll Bar */
 ::-webkit-scrollbar {
@@ -103,10 +119,11 @@ header ul li a:hover {
 .cover_title{
   padding: 0 70px 0;
   height: 50vh;
+  font-family: 'SBAggroB';
 }
 .cover_title p{
   padding-top: 50px;
-  font-size: 15vh;
+  font-size: 12vh;
   font-weight: 600;
 }
 
@@ -1207,7 +1224,7 @@ h3{
 .planSwiper .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 42vh;
 }
 .accordion .title{
   margin:  1vh 4vh;
@@ -1234,6 +1251,26 @@ h3{
 }
 .accordion .content.active{display: block;} 
 
+.plan_buttons{
+  width: 100%;
+  height: 42vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.plan_buttons a{
+  padding: 4vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #121212;
+  border-radius: 50px;
+  box-shadow: rgba(94, 21, 69, 0.3) 0px 7px 29px 0px;
+  transition: 1s;
+}
+.plan_buttons a:hover{
+  scale: 1.1;
+}
 /*----- footer -----*/
 .end{
   width: 100%;
