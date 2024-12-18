@@ -6,6 +6,19 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'PuradakGentleGothicR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.1/PuradakGentleGothicR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'twaysky';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #txt1{
   position:fixed;top:70px;right:10px;color: transparent;}
 
@@ -134,14 +147,14 @@ header ul li a:hover {
 }
 .cover_right {
   position: absolute;
+  font-family: 'twaysky';
   bottom: 70px;
   right: 70px;
   white-space: nowrap; 
   color: transparent;
-  font-weight: 200;
-  width: 800px;
+  width: 920px;
   height: 60px;
-  font-size: 60px;
+  font-size: 54px;
   padding: 50px;
 }
 
