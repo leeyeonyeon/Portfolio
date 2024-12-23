@@ -1199,7 +1199,7 @@ h3{
   transition: 1s;
 }
 .mobile-content img:hover{
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 
@@ -1269,14 +1269,14 @@ h3{
   transition: 1s;
 }
 .plan_buttons a:hover{
-  scale: 1.1;
+  transform: scale(1.1);
 }
 /*----- footer -----*/
 .end{
   width: 100%;
   height: 100vh;
   background: url(../image/cover7.png) center no-repeat;
-  background-position: cover;
+  background-size: cover;
 }
 .end-top p{
   padding: 10vh 70px;
